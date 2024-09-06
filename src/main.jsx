@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./index.css"
 import Home from './routes/Home.jsx'
+import Tiktaktoe from './routes/tictactoe.jsx';
 
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <Home/>,
   },
+  {
+    path: '/tiktaktoe',
+    element: <Tiktaktoe/>,
+  }
 
 ])
 
