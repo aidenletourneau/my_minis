@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import {useState, useEffect} from 'react'
 import { createPortal } from 'react-dom';
+import TictactoeWinModal from '../components/TictactoeWinModal'
 
 let turn = 'X';
 export default function Tictactoe() {
@@ -12,7 +13,6 @@ export default function Tictactoe() {
     ['','',''],
     ['','',''],
   ])
-
 
   function checkWin() {
     for (let row of board) {
@@ -66,8 +66,8 @@ export default function Tictactoe() {
   return (
     <div className="tiktaktoe-page">
       <h1>Tic Tac Toe</h1>
-      <WinModal showModal={showModal} setShowModal={setShowModal} winner={turn === 'X' ? 'O' : 'X'}/>
-      <div className="game">
+      <TictactoeWinModal showModal={showModal} setShowModal={setShowModal} winner={turn === 'X' ? 'O' : 'X'}/>
+      <div>
         {board.map((row, index) => (
           <div id={index} key={index} className="column">
             {row.map((cell, index) => (
@@ -82,20 +82,4 @@ export default function Tictactoe() {
       </div>
     </div>  
   )
-}
-
-
-function WinModal({showModal, setShowModal, winner}) {
-  
-  return (
-    <>
-      {showModal && createPortal(
-        <div className="modal">
-          <div className="modal-text">{winner}'s Win!</div>
-          <button onClick={() => setShowModal(false)}>Close</button>
-        </div>,
-        document.body
-      )}
-    </>
-  );
 }

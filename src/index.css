@@ -21,16 +21,10 @@ body{
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.tiktaktoe-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-}
+
 
 .home-page {
   display: flex;
@@ -58,6 +52,15 @@ body{
   cursor: pointer;
 }
 
+
+.tiktaktoe-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
 .row{
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -75,11 +78,7 @@ body{
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
-  box-shadow: 0 0 0 0.1em black;
-}
-
-.game {
-  border: inset 20px solid white;
+  box-shadow: 0 0 0 0.05em black;
 }
 
 .buttons {
@@ -106,4 +105,63 @@ body{
 .modal-text {
   font-size: 2em;
   color: rgb(20, 185, 20);
+}
+
+.wordle-page {
+  width: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+
+.wordle-row {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: .5em;
+}
+
+.wordle-game{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: .5em;
+}
+
+.wordle-cell {
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  box-shadow: 0 0 0 0.05em rgb(122, 122, 122);
+}
+
+.keyboard-letter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: .5em;
+}
+
+.wordle-keyboard-button {
+  height: 2.5em;
+  padding-left: .5em;
+  padding-right: .5em;
+  background-color: rgb(201, 201, 201);
+  border: none;
+  border-radius: 10%;
+  font-size: 1.3em;
+  font-weight:bold;
+  cursor: pointer;
+}
+
+.letter-choices {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
 }

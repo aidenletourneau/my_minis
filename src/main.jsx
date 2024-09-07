@@ -8,6 +8,7 @@ import {
 import "./index.css"
 import Home from './routes/Home.jsx'
 import Tiktaktoe from './routes/tictactoe.jsx';
+import Wordle from './routes/Wordle.jsx'
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/tiktaktoe',
     element: <Tiktaktoe/>,
+  },
+  {
+    path: '/wordle',
+    element: <Wordle/>,
   }
 
 ])
