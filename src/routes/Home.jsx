@@ -7,8 +7,9 @@ export default function Home() {
     <div className="home-page">
       <h1>My Mini Games!!</h1>
       <div className="game-buttons">
-        <Link to={'/tiktaktoe'}><button className="game-button">Tik-Tak-Toe</button></Link>
+        <Link to={'/tiktaktoe'}><button className="game-button">Tic Tac Toe</button></Link>
         <Link to={'/wordle'}><button className="game-button">Wordle</button></Link>
+        <Link to={'/Matching'}><button className="game-button">Matching</button></Link>
       </div>
     </div>
     

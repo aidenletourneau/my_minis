@@ -48,23 +48,22 @@ export default function Wordle(){
       return
     }
     for(let i = 0; i < 5; i++){
+      const cell = document.getElementById(String(currentRow)+String(4-i))
+      cell.style.color = 'white'
       if (guess[i] === word[i]){
-        const cell = document.getElementById(String(currentRow)+String(4-i))
-        console.log(cell)
-        cell.style.backgroundColor = 'green';
+        cell.style.backgroundColor = 'rgb(37, 90, 37)';
+        cell.style.borderColor = 'rgb(37, 90, 37)';
       }
       else if (word.includes(guess[i])) {
-        const cell = document.getElementById(String(currentRow)+String(4-i))
-        console.log(cell)
-        cell.style.backgroundColor = 'yellow';
+        cell.style.backgroundColor = 'rgb(145, 148, 41)';
+        cell.style.borderColor = 'rgb(145, 148, 41)';
       }
       else{
-        const cell = document.getElementById(String(currentRow)+String(4-i))
-        console.log(cell)
         cell.style.backgroundColor = 'gray';
+        cell.style.borderColor = 'gray';
       }
     }
-    if (guess === word){
+    if (guess === word || currentRow === 5){
       setShowModal(true)
       return
     }
@@ -75,7 +74,7 @@ export default function Wordle(){
   return (
     <div className="wordle-page">
       <h1>Wordle</h1>
-      <WordleWinModal showModal={showModal} setShowModal={setShowModal} guesses={currentRow+1}/>
+      <WordleWinModal showModal={showModal} setShowModal={setShowModal} guesses={currentRow+1} word={word}/>
       <div className="wordle-game">
         {board.map((row, rowIndex) => (
           <div key={rowIndex} className="wordle-row">
