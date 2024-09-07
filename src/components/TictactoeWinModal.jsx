@@ -7,7 +7,7 @@ export default function TictactoeWinModal({showModal, setShowModal, winner}) {
       {showModal && createPortal(
         <div className="modal">
           <div className="modal-text">{winner}'s Win!</div>
-          <button onClick={() => setShowModal(false)}>Close</button>
+          <button className='game-button' onClick={() => setShowModal(false)}>Close</button>
         </div>,
         document.body
       )}

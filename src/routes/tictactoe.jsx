@@ -64,7 +64,7 @@ export default function Tictactoe() {
   }
 
   return (
-    <div className="tiktaktoe-page">
+    <div className="tictactoe-page">
       <h1>Tic Tac Toe</h1>
       <TictactoeWinModal showModal={showModal} setShowModal={setShowModal} winner={turn === 'X' ? 'O' : 'X'}/>
       <div>
