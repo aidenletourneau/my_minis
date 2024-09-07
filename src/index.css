@@ -27,9 +27,11 @@ body{
 
 
 .home-page {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 20em;
   gap: 2em;
 }
@@ -88,13 +90,13 @@ body{
 }
 
 .modal {
-  width: 30%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
   border-radius: 2em;
   display: flex;
   flex-direction: column;
@@ -103,8 +105,9 @@ body{
 }
 
 .modal-text {
+  text-align: center;
   font-size: 2em;
-  color: rgb(20, 185, 20);
+  color: rgb(0, 0, 0);
 }
 
 .wordle-page {
@@ -114,20 +117,18 @@ body{
   justify-content: center;
   align-items: center;
   gap: 1em;
-  padding-bottom: 2em;
-  padding-top: 2em;
 }
 
 .wordle-row {
   display: flex;
   flex-direction: row-reverse;
-  gap: .5em;
+  gap: .3em;
 }
 
 .wordle-game{
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: .5em;
+  gap: .3em;
 }
 
 .wordle-cell {
@@ -137,7 +138,7 @@ body{
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
-  box-shadow: 0 0 0 0.05em rgb(122, 122, 122);
+  border: solid .05em rgb(122, 122, 122)
 }
 
 .keyboard-letter-row {
@@ -164,4 +165,13 @@ body{
   display: flex;
   flex-direction: column;
   gap: .5em;
+}
+
+.matching-page {
+  width: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }

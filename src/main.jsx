@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 import "./index.css"
 import Home from './routes/Home.jsx'
-import Tiktaktoe from './routes/tictactoe.jsx';
+import Tictactoe from './routes/Tictactoe.jsx';
 import Wordle from './routes/Wordle.jsx'
+import Matching from './routes/Matching.jsx'
 
 
 const router = createBrowserRouter([
@@ -18,12 +19,16 @@ const router = createBrowserRouter([
   },
   {
     path: '/tiktaktoe',
-    element: <Tiktaktoe/>,
+    element: <Tictactoe/>,
   },
   {
     path: '/wordle',
     element: <Wordle/>,
-  }
+  },
+  {
+    path: '/matching',
+    element: <Matching/>,
+  },
 
 ])
 
