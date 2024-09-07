@@ -61,6 +61,7 @@ export default function Wordle(){
       else{
         cell.style.backgroundColor = 'gray';
         cell.style.borderColor = 'gray';
+        document.getElementById(guess[i]).disabled = true
       }
     }
     if (guess === word || currentRow === 5){
@@ -79,7 +80,7 @@ export default function Wordle(){
         {board.map((row, rowIndex) => (
           <div key={rowIndex} className="wordle-row">
             {row.map((cell, colIndex) => (
-              <div id={String(rowIndex)+String(colIndex)} key={String(rowIndex)+String(colIndex)} className="wordle-cell">{board[rowIndex][colIndex]}</div>
+              <div id={String(rowIndex)+String(colIndex)} key={String(rowIndex)+String(colIndex)} className="cell">{board[rowIndex][colIndex]}</div>
             ))}
           </div>)
         )}
@@ -87,18 +88,18 @@ export default function Wordle(){
       <div className="letter-choices">
         <div className="keyboard-letter-row">
         {keyboardLetters1.map(letter => (
-          <button onClick={handleButtonClick} key={letter} className="wordle-keyboard-button">{letter}</button>
+          <button  id={letter} onClick={handleButtonClick} key={letter} className="wordle-keyboard-button">{letter}</button>
         ))}
         </div>
         <div className="keyboard-letter-row">
         {keyboardLetters2.map(letter => (
-          <button onClick={handleButtonClick} key={letter}  className="wordle-keyboard-button">{letter}</button>
+          <button  id={letter} onClick={handleButtonClick} key={letter}  className="wordle-keyboard-button">{letter}</button>
         ))}
         </div>
         <div className="keyboard-letter-row">
           <button onClick={handleEnterClick} className="wordle-keyboard-button">Enter</button>
         {keyboardLetters3.map(letter => (
-          <button onClick={handleButtonClick} key={letter} className="wordle-keyboard-button">{letter}</button>
+          <button  id={letter} onClick={handleButtonClick} key={letter} className="wordle-keyboard-button">{letter}</button>
         ))}
           <button onClick={handleDeleteClick} className="wordle-keyboard-button">Delete</button>
         </div>
